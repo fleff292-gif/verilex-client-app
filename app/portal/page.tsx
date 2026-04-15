@@ -45,7 +45,10 @@ export default function Portal() {
           </div>
           <span style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 700, fontSize: 15, letterSpacing: 3, textTransform: "uppercase", color: "white" }}>{firmConfig.name}</span>
         </div>
-        <span style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", letterSpacing: "1px", textTransform: "uppercase" }}>Matter Portal</span>
+        <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
+          <Link href="/portal/roi" style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", textDecoration: "none", letterSpacing: "0.5px" }}>ROI Report →</Link>
+          <span style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", letterSpacing: "1px", textTransform: "uppercase" }}>Matter Portal</span>
+        </div>
       </nav>
 
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "40px 24px" }}>

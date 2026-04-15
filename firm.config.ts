@@ -28,6 +28,15 @@ const firmConfig = {
   // Booking link
   calLink: "https://cal.com/verilex/discovery",
 
+  // ROI baseline — what the firm did BEFORE Verilex (used to calculate savings)
+  baseline: {
+    intakeHoursPerClient: 4,       // hours to onboard one client manually
+    docHoursPerDocument: 2,        // hours to draft one document manually
+    statusCallsPerMatter: 8,       // inbound status calls per matter
+    hourlyStaffCost: 75,           // $ per hour for admin staff
+    goLiveDate: "2026-01-01",      // when Verilex went live for this firm
+  },
+
   // Engagement letter placeholder — used in PDF generation
   engagementTemplate: {
     firmFullName: "Mitchell & Associates LLP",

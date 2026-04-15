@@ -9,6 +9,7 @@ export type Matter = {
   matter_type: string;
   details: string;
   stage: "intake_received" | "engagement_sent" | "signed" | "matter_open";
+  client_token: string;
   created_at: string;
 };
 

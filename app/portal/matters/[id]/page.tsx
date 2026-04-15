@@ -147,6 +147,19 @@ export default function MatterDetail({ params }: { params: Promise<{ id: string 
           </table>
         </div>
 
+        {/* Client portal link */}
+        {matter.client_token && (
+          <div style={{ background: "white", border: "1px solid #e5e7eb", padding: "28px", marginBottom: 24 }}>
+            <h2 style={{ fontSize: 11, fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase", color: "#9ca3af", marginBottom: 12 }}>Client portal link</h2>
+            <p style={{ fontSize: 13, color: "#6b7280", marginBottom: 14 }}>Share this link with the client so they can track their matter status at any time.</p>
+            <div style={{ background: "#f8f9fa", border: "1px solid #e5e7eb", padding: "10px 14px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+              <span style={{ fontSize: 12, color: "#374151", wordBreak: "break-all" }}>
+                {typeof window !== "undefined" ? window.location.origin : process.env.NEXT_PUBLIC_APP_URL}/my-matter/{matter.client_token}
+              </span>
+            </div>
+          </div>
+        )}
+
         {/* Document generator */}
         <div style={{ background: "white", border: "1px solid #e5e7eb", padding: "28px" }}>
           <h2 style={{ fontSize: 11, fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase", color: "#9ca3af", marginBottom: 12 }}>Documents</h2>

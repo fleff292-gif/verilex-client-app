@@ -11,7 +11,7 @@ const footer = () => `
     <p style="font-size:12px;color:#9ca3af;margin:0;">© ${new Date().getFullYear()} ${firmConfig.name}. All rights reserved.</p>
   </div>`;
 
-export function intakeConfirmationEmail(matter: Pick<Matter, "first_name" | "last_name" | "email" | "matter_type">) {
+export function intakeConfirmationEmail(matter: Pick<Matter, "first_name" | "last_name" | "email" | "matter_type">, portalUrl?: string) {
   return {
     subject: `We've received your enquiry — ${firmConfig.name}`,
     html: `
@@ -24,9 +24,16 @@ export function intakeConfirmationEmail(matter: Pick<Matter, "first_name" | "las
             <p style="font-size:13px;color:#6b7280;margin:4px 0;"><strong style="color:#07111f;">Name:</strong> ${matter.first_name} ${matter.last_name}</p>
             <p style="font-size:13px;color:#6b7280;margin:4px 0;"><strong style="color:#07111f;">Matter type:</strong> ${matter.matter_type}</p>
           </div>
+          ${portalUrl ? `
+          <p style="font-size:14px;color:#374151;margin:0 0 12px;font-weight:600;">Track your matter online</p>
+          <p style="font-size:14px;color:#6b7280;margin:0 0 20px;">You can check the status of your matter at any time using the link below — no login required.</p>
+          <a href="${portalUrl}" style="display:inline-block;background:${firmConfig.primaryColor};color:white;font-weight:600;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 28px;text-decoration:none;margin-bottom:28px;">Track your matter →</a>
+          <p style="font-size:13px;color:#9ca3af;margin:0 0 28px;">Or copy this link: <span style="color:#6b7280;">${portalUrl}</span></p>
+          ` : `
           <p style="font-size:14px;color:#6b7280;margin:0 0 24px;">In the meantime, you can book a call with us directly:</p>
-          <a href="${firmConfig.calLink}" style="display:inline-block;background:${firmConfig.primaryColor};color:white;font-weight:600;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 28px;text-decoration:none;">Book a call</a>
-          <p style="margin-top:32px;font-size:14px;color:#6b7280;">— ${firmConfig.name}<br/><a href="mailto:${firmConfig.email}" style="color:#6b7280;">${firmConfig.email}</a></p>
+          <a href="${firmConfig.calLink}" style="display:inline-block;background:${firmConfig.primaryColor};color:white;font-weight:600;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 28px;text-decoration:none;margin-bottom:28px;">Book a call</a>
+          `}
+          <p style="font-size:14px;color:#6b7280;margin:0;">— ${firmConfig.name}<br/><a href="mailto:${firmConfig.email}" style="color:#6b7280;">${firmConfig.email}</a></p>
         </div>
         ${footer()}
       </div>`,

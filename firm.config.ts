@@ -4,16 +4,16 @@
 
 const firmConfig = {
   // Firm identity
-  name: "Mitchell & Associates",
-  shortName: "Mitchell",
-  email: "intake@mitchelllaw.com",        // where new leads are sent
+  name: "Verilex Demo",
+  shortName: "Verilex",
+  email: "verilexagency@gmail.com",       // where new leads are sent
   phone: "+1 555 000 0000",
-  website: "https://mitchelllaw.com",
+  website: "https://verilex-agency.vercel.app",
   address: "123 Legal Street, New York, NY 10001",
 
   // Branding
   primaryColor: "#07111f",               // nav, buttons, accents
-  logoText: "MA",                        // mark letters (2 chars)
+  logoText: "VX",                        // mark letters (2 chars)
 
   // Matter types this firm handles
   matterTypes: [
@@ -39,10 +39,10 @@ const firmConfig = {
 
   // Engagement letter placeholder — used in PDF generation
   engagementTemplate: {
-    firmFullName: "Mitchell & Associates LLP",
+    firmFullName: "Verilex Demo LLP",
     firmAddress: "123 Legal Street, New York, NY 10001",
     firmPhone: "+1 555 000 0000",
-    firmEmail: "intake@mitchelllaw.com",
+    firmEmail: "verilexagency@gmail.com",
     hourlyRate: "$350",
     paymentTerms: "14 days",
   },
